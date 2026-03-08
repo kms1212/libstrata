@@ -1,0 +1,4 @@
+build*
+.ruby-lsp
+.vscode
+test.c

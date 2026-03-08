@@ -1,8 +1,6 @@
 #ifndef __STRATA_UUID_H__
 #define __STRATA_UUID_H__
 
-#include <string.h>
-
 #include <strata/compiler.h>
 #include <strata/status.h>
 #include <strata/types.h>
@@ -36,7 +34,7 @@ struct StUuid {
 
 static __always_inline int StUuid_IsEqual(struct StUuid *uuid1 __in, struct StUuid *uuid2 __in)
 {
-    return memcmp(uuid1, uuid2, sizeof(struct StUuid)) == 0;
+    return __builtin_memcmp(uuid1, uuid2, sizeof(struct StUuid)) == 0;
 }
 
 static __always_inline int StUuid_IsNil(struct StUuid *uuid __in)
