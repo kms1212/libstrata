@@ -11,7 +11,6 @@ struct krt_entries {
     StStatus (*node_query)(
         uint32_t handle_num __in,
         const struct StUuid *if_uuid __in,
-        uint32_t request_groupid __in,
         uint32_t request_abiver __in,
         uint32_t *funcid_base __out,
         uint32_t *result_abiver __out

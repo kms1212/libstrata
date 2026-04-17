@@ -17,7 +17,6 @@ StStatus StHandle_Close(StHandle handle __in);
 StStatus StHandle_Query(
     StHandle handle __in,
     const struct StUuid *if_uuid __in,
-    uint32_t request_groupid __in,
     uint32_t request_abiver __in,
     uint32_t *funcid_base __out,
     uint32_t *result_abiver __out
