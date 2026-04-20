@@ -55,8 +55,24 @@ struct krt_entries {
     );
 };
 
+enum {
+    ST_HANDLE_QUERY_CACHE_SIZE = 8,
+};
+
+struct StHandleQueryCacheEntry {
+    struct StUuid if_uuid;
+    uint32_t request_abiver;
+    uint32_t funcid_base;
+    uint32_t result_abiver;
+    StStatus status;
+    uint8_t valid;
+};
+
 struct StHandleInner {
     uint32_t handle_num;
+    uint32_t next_query_cache_slot;
+    uint8_t in_use;
+    struct StHandleQueryCacheEntry query_cache[ST_HANDLE_QUERY_CACHE_SIZE];
 };
 
 #endif  // __HANDLE_INTERNAL_H__
